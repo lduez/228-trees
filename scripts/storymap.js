@@ -102,7 +102,6 @@ $(window).on('load', function() {
     }
 
     var pixelsAbove = [];
-    var chapterCount = 0;
 
     var currentlyInFocus; // integer to specify each chapter is currently in focus
     var overlay;  // URL of the overlay for in-focus chapter
@@ -118,8 +117,9 @@ $(window).on('load', function() {
           L.marker([lat, lon], {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
-              number: ++chapterCount,
-              markerColor: 'blue'
+              number: c['Chapter'],
+              markerColor: 'blue',
+              extraClasses: 'marker-tree'
             })
           }
         ));
